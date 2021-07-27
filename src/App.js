@@ -17,8 +17,8 @@ class App extends Component {
 
   addContact = (data) => {
     const contactIncludesName = this.state.contacts
-      .map((contact) => contact.name)
-      .includes(data.name);
+      .map((contact) => contact.name.toLowerCase())
+      .includes(data.name.toLowerCase());
     if (contactIncludesName) {
       return alert(`${data.name} is already in contacts`);
     }
